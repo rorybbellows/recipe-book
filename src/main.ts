@@ -5,8 +5,10 @@ import { RecipeBookAppComponent, environment } from './app/';
 import { ShoppingListService } from './app/shopping-list';
 import { APP_ROUTES_PROVIDERS } from './app/app.routes';
 
+import { disableDeprecatedForms, provideForms } from "@angular/forms";
+
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(RecipeBookAppComponent, [APP_ROUTES_PROVIDERS, ShoppingListService]);
+bootstrap(RecipeBookAppComponent, [APP_ROUTES_PROVIDERS, ShoppingListService, disableDeprecatedForms(), provideForms()]);
