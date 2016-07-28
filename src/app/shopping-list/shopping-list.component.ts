@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ShoppingListAddComponent } from './shopping-list-add.component';
-import { Ingredient } from '../shared';
-import { ShoppingListService } from './shopping-list.service';
+import { ShoppingListAddComponent } from "./shopping-list-add.component";
+import { Ingredient } from "../shared";
+import { ShoppingListService } from "./shopping-list.service";
 
 @Component({
   moduleId: module.id,
@@ -14,13 +14,13 @@ export class ShoppingListComponent implements OnInit {
   items: Ingredient[] = [];
   selectedItem: Ingredient = null;
 
-  constructor(private sls: ShoppingListService) { }
+  constructor(private sls: ShoppingListService) {}
 
   ngOnInit() {
     this.items = this.sls.getItems();
   }
 
-  onSelectItem(item: Ingredient){
+  onSelectItem(item: Ingredient) {
     this.selectedItem = item;
   }
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES } from "@angular/router";
 
 import { Recipe } from '../recipe';
 import { RecipeItemComponent } from './recipe-item.component';
-import { RecipeService } from '../recipe.service';
+import { RecipeService } from "../recipe.service";
 
 @Component({
   moduleId: module.id,
@@ -14,7 +14,7 @@ import { RecipeService } from '../recipe.service';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
@@ -22,4 +22,5 @@ export class RecipeListComponent implements OnInit {
       (recipes: Recipe[]) => this.recipes = recipes
     );
   }
+
 }

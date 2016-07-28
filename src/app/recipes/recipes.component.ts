@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES } from "@angular/router";
 
 import { RecipeListComponent } from "./recipe-list";
 
@@ -9,5 +9,5 @@ import { RecipeListComponent } from "./recipe-list";
   templateUrl: 'recipes.component.html',
   directives: [RecipeListComponent, ROUTER_DIRECTIVES]
 })
-export class RecipesComponent {
+export class RecipesComponent{
 }

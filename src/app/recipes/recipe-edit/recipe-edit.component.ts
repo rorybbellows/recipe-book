@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs/Rx';
+import { ActivatedRoute, Router } from "@angular/router";
+import { Subscription } from "rxjs/Rx";
 import {
   FormArray,
   FormGroup,
@@ -8,10 +8,10 @@ import {
   Validators,
   FormBuilder,
   REACTIVE_FORM_DIRECTIVES
-} from '@angular/forms';
+} from "@angular/forms";
 
-import { RecipeService } from '../recipe.service';
-import { Recipe } from '../recipe';
+import { RecipeService } from "../recipe.service";
+import { Recipe } from "../recipe";
 
 @Component({
   moduleId: module.id,
@@ -82,7 +82,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  private navigateBack () {
+  private navigateBack() {
     this.router.navigate(['../']);
   }
 
@@ -94,19 +94,18 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
 
     if (!this.isNew) {
       if (this.recipe.hasOwnProperty('ingredients')) {
-        for(let i = 0; i < this.recipe.ingredients.length; i++) {
+        for (let i = 0; i < this.recipe.ingredients.length; i++) {
           recipeIngredients.push(
             new FormGroup({
-                name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
-                amount: new FormControl(this.recipe.ingredients[i].amount, [
-                  Validators.required,
-                  Validators.pattern("\\d+")
-                ])
+              name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
+              amount: new FormControl(this.recipe.ingredients[i].amount, [
+                Validators.required,
+                Validators.pattern("\\d+")
+              ])
             })
           );
         }
       }
-
       recipeName = this.recipe.name;
       recipeImageUrl = this.recipe.imagePath;
       recipeContent = this.recipe.description;

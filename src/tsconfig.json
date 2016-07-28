@@ -19,9 +19,5 @@
   "files": [
     "main.ts",
     "typings.d.ts"
-  ],
-
-  "filesGlob": [
-    "**/*.ts"
   ]
 }

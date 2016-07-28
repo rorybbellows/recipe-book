@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES } from "@angular/router";
 
-import { DropdownDirective } from './dropdown.directive';
-import { RecipeService } from './recipes/recipe.service';
+import { DropdownDirective } from "./dropdown.directive";
+import { RecipeService } from "./recipes/recipe.service";
 
 @Component({
   moduleId: module.id,
@@ -17,8 +17,8 @@ export class HeaderComponent {
   onStore() {
     this.recipeService.storeData().subscribe(
       data => console.log(data),
-      error => console.log(error)
-    )
+      error => console.error(error)
+    );
   }
 
   onFetch() {
